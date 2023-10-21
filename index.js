@@ -1,15 +1,16 @@
 import mongoose from "mongoose";
 import { PORT, MongoDB_URL } from "./config.js";
 import express from "express";
-import booksRoute from './routes/booksRoute.js'
 import cors from 'cors'
+import { router } from "./Routes/booksRoute.js";
+
 
 
 const app = express();
 
 app.use(express.json());
 app.use(cors())
-app.use('/books', booksRoute)
+app.use('/books', router)
 
 
 
